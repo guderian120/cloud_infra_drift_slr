@@ -19,17 +19,17 @@ from matplotlib import patheffects
 # ──────────────────────────────────────────────
 # Global style
 # ──────────────────────────────────────────────
-BG_DARK   = "#1a1a2e"
-BG_CARD   = "#16213e"
-ACCENT_1  = "#0f3460"
-ACCENT_2  = "#533483"
-TEXT_COL  = "#e0e0e0"
-GRID_COL  = "#2a2a4a"
+BG_DARK   = "#ffffff"   # white
+BG_CARD   = "#f5f7fa"   # very light grey for axes/cards
+ACCENT_1  = "#1a56db"
+ACCENT_2  = "#7e3af2"
+TEXT_COL  = "#1e2a3a"   # near-black for all text
+GRID_COL  = "#d1d5db"   # light grey gridlines
 
 PALETTE = [
-    "#00d2ff", "#7b2ff7", "#f72585", "#4cc9f0",
-    "#3a86ff", "#8338ec", "#ff006e", "#fb5607",
-    "#ffbe0b", "#06d6a0", "#118ab2", "#ef476f",
+    "#2563eb", "#7c3aed", "#db2777", "#0891b2",
+    "#059669", "#d97706", "#dc2626", "#ea580c",
+    "#65a30d", "#0284c7", "#9333ea", "#e11d48",
 ]
 
 plt.rcParams.update({
@@ -39,16 +39,16 @@ plt.rcParams.update({
     "axes.labelcolor":   TEXT_COL,
     "axes.grid":         True,
     "grid.color":        GRID_COL,
-    "grid.alpha":        0.4,
+    "grid.alpha":        0.6,
     "text.color":        TEXT_COL,
     "xtick.color":       TEXT_COL,
     "ytick.color":       TEXT_COL,
     "font.family":       "sans-serif",
     "font.size":         12,
-    "legend.facecolor":  BG_CARD,
+    "legend.facecolor":  "#ffffff",
     "legend.edgecolor":  GRID_COL,
     "savefig.facecolor": BG_DARK,
-    "savefig.dpi":       300,
+    "savefig.dpi":       600,
 })
 
 OUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "images")
@@ -57,7 +57,7 @@ os.makedirs(OUT_DIR, exist_ok=True)
 
 def save(fig, name):
     path = os.path.join(OUT_DIR, name)
-    fig.savefig(path, bbox_inches="tight", dpi=300)
+    fig.savefig(path, bbox_inches="tight", dpi=600)
     plt.close(fig)
     print(f"  [OK] {name}")
 
@@ -70,21 +70,21 @@ def prisma_flow():
     ax.set_xlim(0, 14)
     ax.set_ylim(0, 22)
     ax.axis("off")
-    fig.patch.set_facecolor(BG_DARK)
+    fig.patch.set_facecolor("white")
+    ax.set_facecolor("white")
 
     # ---- helpers ----
-    def box(x, y, w, h, text, color="#0f3460", fontsize=10, bold=False):
+    def box(x, y, w, h, text, color="#1a56db", fontsize=10, bold=False):
         bx = FancyBboxPatch(
             (x - w / 2, y - h / 2), w, h,
             boxstyle="round,pad=0.3", linewidth=1.5,
-            edgecolor=color, facecolor=color + "33",
+            edgecolor=color, facecolor=color + "22",
         )
         ax.add_patch(bx)
         weight = "bold" if bold else "normal"
         ax.text(x, y, text, ha="center", va="center",
                 fontsize=fontsize, color=TEXT_COL, weight=weight,
-                wrap=True,
-                path_effects=[patheffects.withStroke(linewidth=0, foreground=BG_DARK)])
+                wrap=True)
 
     def arrow(x1, y1, x2, y2, color="#4cc9f0"):
         ax.annotate("", xy=(x2, y2), xytext=(x1, y1),
@@ -95,75 +95,75 @@ def prisma_flow():
 
     # Title
     ax.text(7, 21.3, "PRISMA Flow Diagram", ha="center", va="center",
-            fontsize=18, color="#00d2ff", weight="bold")
+            fontsize=18, color="#1a56db", weight="bold")
     ax.text(7, 20.8, "Cloud Infrastructure Drift Detection & Remediation SLR (2019-2025)",
-            ha="center", va="center", fontsize=10, color="#7b7b9b")
+            ha="center", va="center", fontsize=10, color="#6b7280")
 
     # --- Identification ---
-    ax.text(1.0, 19.5, "IDENTIFICATION", fontsize=11, color="#00d2ff",
+    ax.text(1.0, 19.5, "IDENTIFICATION", fontsize=11, color="#1a56db",
             weight="bold", rotation=90, va="center")
 
     box(7, 19.5, 8, 1.2,
         "Records identified through\ndatabase searching (n = 830)\n"
         "SciSpace: 600  |  Google Scholar: 110  |  ArXiv: 120",
-        color="#3a86ff", fontsize=10, bold=True)
+        color="#2563eb", fontsize=10, bold=True)
 
     arrow(7, 18.9, 7, 18.1)
 
     box(7, 17.5, 6, 1.0,
         "Records after duplicates removed\n(n = 683)  [Duplicates removed: 147, 17.7%]",
-        color="#3a86ff", fontsize=10)
+        color="#2563eb", fontsize=10)
 
     side_box(12, 17.5, 3, 0.8,
-             "Duplicates\nremoved\n(n = 147)", color="#f72585")
-    arrow(10, 17.5, 10.5, 17.5, color="#f72585")
+             "Duplicates\nremoved\n(n = 147)", color="#db2777")
+    arrow(10, 17.5, 10.5, 17.5, color="#db2777")
 
     # --- Screening ---
-    ax.text(1.0, 15.0, "SCREENING", fontsize=11, color="#4cc9f0",
+    ax.text(1.0, 15.0, "SCREENING", fontsize=11, color="#0891b2",
             weight="bold", rotation=90, va="center")
 
     arrow(7, 17.0, 7, 16.1)
     box(7, 15.5, 6, 1.0,
         "Records after year filter (2019-2025)\n(n = 391)",
-        color="#533483", fontsize=10)
+        color="#7c3aed", fontsize=10)
 
     side_box(12, 15.5, 3, 0.8,
-             "Excluded\nby year\n(n = 292)", color="#f72585")
-    arrow(10, 15.5, 10.5, 15.5, color="#f72585")
+             "Excluded\nby year\n(n = 292)", color="#db2777")
+    arrow(10, 15.5, 10.5, 15.5, color="#db2777")
 
     arrow(7, 15.0, 7, 14.1)
     box(7, 13.5, 6, 1.0,
         "Records after abstract screening\n(Relevance Score ≥ 3.0)\n(n = 156)",
-        color="#533483", fontsize=10)
+        color="#7c3aed", fontsize=10)
 
     side_box(12, 13.5, 3, 0.8,
-             "Excluded at\nabstract screening\n(n = 235)", color="#f72585")
-    arrow(10, 13.5, 10.5, 13.5, color="#f72585")
+             "Excluded at\nabstract screening\n(n = 235)", color="#db2777")
+    arrow(10, 13.5, 10.5, 13.5, color="#db2777")
 
     # --- Eligibility ---
-    ax.text(1.0, 11.0, "ELIGIBILITY", fontsize=11, color="#7b2ff7",
+    ax.text(1.0, 11.0, "ELIGIBILITY", fontsize=11, color="#7c3aed",
             weight="bold", rotation=90, va="center")
 
     arrow(7, 13.0, 7, 12.1)
     box(7, 11.5, 6, 1.0,
         "Full-text articles assessed\nfor eligibility\n(n = 104)",
-        color="#7b2ff7", fontsize=10)
+        color="#7c3aed", fontsize=10)
 
     side_box(12, 11.5, 3, 0.8,
-             "Full-text not\navailable\n(n = 52 retained\nfrom abstract)", color="#ff006e")
-    arrow(10, 11.5, 10.5, 11.5, color="#ff006e")
+             "Full-text not\navailable\n(n = 52 retained\nfrom abstract)", color="#dc2626")
+    arrow(10, 11.5, 10.5, 11.5, color="#dc2626")
 
     arrow(7, 11.0, 7, 10.1)
     box(7, 9.5, 6, 1.0,
         "Full-text articles included\nafter screening\n(n = 44)",
-        color="#7b2ff7", fontsize=10)
+        color="#7c3aed", fontsize=10)
 
     side_box(12, 9.5, 3, 0.8,
-             "Excluded at\nfull-text screening\n(n = 60)", color="#f72585")
-    arrow(10, 9.5, 10.5, 9.5, color="#f72585")
+             "Excluded at\nfull-text screening\n(n = 60)", color="#db2777")
+    arrow(10, 9.5, 10.5, 9.5, color="#db2777")
 
     # --- Included ---
-    ax.text(1.0, 7.0, "INCLUDED", fontsize=11, color="#06d6a0",
+    ax.text(1.0, 7.0, "INCLUDED", fontsize=11, color="#059669",
             weight="bold", rotation=90, va="center")
 
     arrow(7, 9.0, 7, 8.1)
@@ -171,7 +171,7 @@ def prisma_flow():
         "Studies included in\nfinal synthesis (n = 96)\n\n"
         "Full-text reviewed: 44 (45.8%)\n"
         "Abstract-only reviewed: 52 (54.2%)",
-        color="#06d6a0", fontsize=11, bold=True)
+        color="#059669", fontsize=11, bold=True)
 
     save(fig, "prisma_flow_diagram.png")
 
@@ -199,14 +199,14 @@ def temporal_distribution():
     ax.set_ylabel("Number of Papers", fontsize=13)
     ax.set_title("Temporal Distribution of Included Studies (2019–2025)\n"
                  "380% growth from 2019 to 2025",
-                 fontsize=15, weight="bold", color="#00d2ff", pad=15)
+                 fontsize=15, weight="bold", color="#1a56db", pad=15)
     ax.set_xticks(years)
     ax.set_ylim(0, 32)
 
     # Annotation
     ax.annotate("380% increase", xy=(2025, 24), xytext=(2023.2, 28),
-                fontsize=11, color="#f72585", weight="bold",
-                arrowprops=dict(arrowstyle="->", color="#f72585", lw=1.5))
+                fontsize=11, color="#db2777", weight="bold",
+                arrowprops=dict(arrowstyle="->", color="#db2777", lw=1.5))
     fig.tight_layout()
     save(fig, "temporal_distribution.png")
 
@@ -232,14 +232,15 @@ def study_types():
         sizes, labels=labels, colors=colors, autopct="%1.1f%%",
         startangle=140, pctdistance=0.78, explode=explode,
         textprops={"color": TEXT_COL, "fontsize": 11},
-        wedgeprops={"edgecolor": BG_DARK, "linewidth": 2},
+        wedgeprops={"edgecolor": "white", "linewidth": 2},
     )
     for t in autotexts:
         t.set_fontsize(11)
         t.set_weight("bold")
+        t.set_color("white")
 
     ax.set_title("Study Types & Methodologies\n(Top 30 Papers)",
-                 fontsize=15, weight="bold", color="#00d2ff", pad=20)
+                 fontsize=15, weight="bold", color="#1a56db", pad=20)
     fig.tight_layout()
     save(fig, "study_types_distribution.png")
 
@@ -270,7 +271,7 @@ def publication_venues():
     ax.invert_yaxis()
     ax.set_xlabel("Number of Papers", fontsize=13)
     ax.set_title("Publication Venues Distribution",
-                 fontsize=15, weight="bold", color="#00d2ff", pad=15)
+                 fontsize=15, weight="bold", color="#1a56db", pad=15)
 
     for bar, c in zip(bars, counts):
         pct = c / 96 * 100
@@ -296,14 +297,15 @@ def geographic_dist():
         shares, labels=regions, colors=colors, autopct="%1.0f%%",
         startangle=90, pctdistance=0.75,
         textprops={"color": TEXT_COL, "fontsize": 12},
-        wedgeprops={"edgecolor": BG_DARK, "linewidth": 2, "width": 0.45},
+        wedgeprops={"edgecolor": "white", "linewidth": 2, "width": 0.45},
     )
     for t in autotexts:
         t.set_fontsize(13)
         t.set_weight("bold")
+        t.set_color("white")
 
     ax.set_title("Geographic Distribution of Author Affiliations",
-                 fontsize=15, weight="bold", color="#00d2ff", pad=20)
+                 fontsize=15, weight="bold", color="#1a56db", pad=20)
     fig.tight_layout()
     save(fig, "geographic_distribution.png")
 
@@ -329,9 +331,9 @@ def detection_radar():
 
     fig, ax = plt.subplots(figsize=(10, 10), subplot_kw=dict(polar=True))
     ax.set_facecolor(BG_CARD)
-    fig.patch.set_facecolor(BG_DARK)
+    fig.patch.set_facecolor("white")
 
-    colors_r = ["#3a86ff", "#00d2ff", "#f72585", "#06d6a0", "#ffbe0b"]
+    colors_r = ["#2563eb", "#0891b2", "#db2777", "#059669", "#d97706"]
     datasets = [accuracy, latency, coverage, automation, multicloud]
 
     # Actually plot each method across categories
@@ -351,7 +353,7 @@ def detection_radar():
     ax.spines["polar"].set_color(GRID_COL)
 
     ax.set_title("Drift Detection Methods — Comparative Radar",
-                 fontsize=15, weight="bold", color="#00d2ff", pad=25)
+                 fontsize=15, weight="bold", color="#1a56db", pad=25)
     ax.legend(loc="upper right", bbox_to_anchor=(1.3, 1.1), fontsize=10)
     fig.tight_layout()
     save(fig, "drift_detection_comparison.png")
@@ -373,7 +375,7 @@ def remediation_strategies():
     w = 0.18
 
     fig, ax = plt.subplots(figsize=(13, 7))
-    colors = ["#3a86ff", "#7b2ff7", "#06d6a0", "#f72585"]
+    colors = ["#2563eb", "#7c3aed", "#059669", "#db2777"]
     dims = ["MTTR (speed)", "Automation Level", "Safety (inverse risk)", "Scalability"]
 
     for i, (vals, label, col) in enumerate(zip(
@@ -386,7 +388,7 @@ def remediation_strategies():
     ax.set_ylabel("Score (1 = lowest, 5 = highest)", fontsize=12)
     ax.set_ylim(0, 6.2)
     ax.set_title("Remediation Strategies — Multi-Dimension Comparison",
-                 fontsize=15, weight="bold", color="#00d2ff", pad=15)
+                 fontsize=15, weight="bold", color="#1a56db", pad=15)
     ax.legend(fontsize=10, ncol=2)
     fig.tight_layout()
     save(fig, "remediation_strategies_comparison.png")
@@ -402,20 +404,21 @@ def iac_tools():
     # --- Left: Market share donut ---
     tools  = ["Terraform", "Ansible", "CloudFormation", "Pulumi/CDK", "Others"]
     shares = [62, 15, 10, 8, 5]
-    colors = ["#00d2ff", "#7b2ff7", "#f72585", "#06d6a0", "#ffbe0b"]
+    colors = ["#2563eb", "#7c3aed", "#db2777", "#059669", "#d97706"]
     explode = (0.05, 0, 0, 0, 0)
 
     wedges, texts, autotexts = ax1.pie(
         shares, labels=tools, colors=colors, autopct="%1.0f%%",
         startangle=90, pctdistance=0.78, explode=explode,
         textprops={"color": TEXT_COL, "fontsize": 11},
-        wedgeprops={"edgecolor": BG_DARK, "linewidth": 2, "width": 0.45},
+        wedgeprops={"edgecolor": "white", "linewidth": 2, "width": 0.45},
     )
     for t in autotexts:
         t.set_fontsize(12)
         t.set_weight("bold")
+        t.set_color("white")
     ax1.set_title("IaC Tools Market Share (2025)",
-                  fontsize=13, weight="bold", color="#00d2ff", pad=15)
+                  fontsize=13, weight="bold", color="#1a56db", pad=15)
 
     # --- Right: Feature comparison heatmap ---
     tool_names = ["Terraform", "CloudFormation", "Ansible", "Pulumi", "CDK"]
@@ -442,10 +445,10 @@ def iac_tools():
         for j in range(len(tool_names)):
             ax2.text(j, i, str(data[i, j]), ha="center", va="center",
                      fontsize=13, weight="bold",
-                     color="white" if data[i, j] < 3 else BG_DARK)
+                     color="white" if data[i, j] < 3 else TEXT_COL)
 
     ax2.set_title("IaC Tools Feature Comparison (1-5 scale)",
-                  fontsize=13, weight="bold", color="#00d2ff", pad=15)
+                  fontsize=13, weight="bold", color="#1a56db", pad=15)
     cbar = fig.colorbar(im, ax=ax2, fraction=0.03, pad=0.04)
     cbar.ax.tick_params(colors=TEXT_COL)
 
@@ -485,7 +488,7 @@ def thematic_clusters():
     ax.invert_yaxis()
     ax.set_xlabel("Relative Presence in Literature (%)", fontsize=12)
     ax.set_title("Six Thematic Clusters in Drift Management Research",
-                 fontsize=15, weight="bold", color="#00d2ff", pad=15)
+                 fontsize=15, weight="bold", color="#1a56db", pad=15)
 
     for bar, h, c in zip(bars, highlights, colors):
         ax.text(bar.get_width() + 0.5, bar.get_y() + bar.get_height() / 2,
@@ -501,16 +504,16 @@ def thematic_clusters():
 # ═══════════════════════════════════════════════
 def key_metrics():
     metrics = [
-        ("97%",   "AI-Augmented\nDetection Accuracy",   "#00d2ff"),
-        ("78%",   "Security Misconfig\nReduction",       "#7b2ff7"),
-        ("83%",   "Fewer Audit\nFindings",               "#f72585"),
-        ("91%",   "Credential Incident\nDecrease",       "#06d6a0"),
-        ("62%",   "Terraform\nMarket Share",             "#3a86ff"),
-        ("50-67%","MTTR\nReduction",                     "#ffbe0b"),
-        ("60%",   "Faster Infrastructure\nDeployment",   "#ff006e"),
-        ("380%",  "Research Growth\n2019→2025",           "#8338ec"),
-        ("94%",   "Multi-Cloud\nAdoption Rate",          "#4cc9f0"),
-        ("42%",   "Operational\nEfficiency Gain",        "#fb5607"),
+        ("97%",   "AI-Augmented\nDetection Accuracy",   "#2563eb"),
+        ("78%",   "Security Misconfig\nReduction",       "#7c3aed"),
+        ("83%",   "Fewer Audit\nFindings",               "#db2777"),
+        ("91%",   "Credential Incident\nDecrease",       "#059669"),
+        ("62%",   "Terraform\nMarket Share",             "#1d4ed8"),
+        ("50-67%","MTTR\nReduction",                     "#b45309"),
+        ("60%",   "Faster Infrastructure\nDeployment",   "#be185d"),
+        ("380%",  "Research Growth\n2019→2025",           "#6d28d9"),
+        ("94%",   "Multi-Cloud\nAdoption Rate",          "#0e7490"),
+        ("42%",   "Operational\nEfficiency Gain",        "#c2410c"),
     ]
 
     fig, axes = plt.subplots(2, 5, figsize=(20, 8))
@@ -525,7 +528,7 @@ def key_metrics():
         card = FancyBboxPatch(
             (0.05, 0.05), 0.9, 0.9,
             boxstyle="round,pad=0.05", linewidth=2,
-            edgecolor=col, facecolor=col + "18",
+            edgecolor=col, facecolor=col + "15",
         )
         ax.add_patch(card)
 
@@ -535,7 +538,7 @@ def key_metrics():
                 fontsize=10, color=TEXT_COL, linespacing=1.3)
 
     fig.suptitle("Key Metrics from the Systematic Literature Review",
-                 fontsize=17, weight="bold", color="#00d2ff", y=0.98)
+                 fontsize=17, weight="bold", color="#1a56db", y=0.98)
     fig.tight_layout(rect=[0, 0, 1, 0.94])
     save(fig, "key_metrics_dashboard.png")
 
