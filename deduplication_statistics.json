@@ -1,0 +1,41 @@
+{
+  "total_papers_before": 830,
+  "unique_papers_after": 683,
+  "duplicates_removed": 147,
+  "deduplication_rate_percent": 17.71,
+  "database_totals": {
+    "scispace": 600,
+    "google_scholar": 110,
+    "arxiv": 120
+  },
+  "file_statistics": {
+    "scispace_query_1.papertable": 100,
+    "scispace_query_2.papertable": 100,
+    "scispace_query_3.papertable": 100,
+    "scispace_query_4.papertable": 100,
+    "scispace_query_5.papertable": 100,
+    "scispace_query_6.papertable": 100,
+    "google_scholar_query_1.papertable": 20,
+    "google_scholar_query_2.papertable": 20,
+    "google_scholar_query_3.papertable": 20,
+    "google_scholar_query_4.papertable": 20,
+    "google_scholar_query_5.papertable": 20,
+    "google_scholar_query_6.papertable": 10,
+    "arxiv_query_1.papertable": 20,
+    "arxiv_query_2.papertable": 20,
+    "arxiv_query_3.papertable": 20,
+    "arxiv_query_4.papertable": 20,
+    "arxiv_query_5.papertable": 20,
+    "arxiv_query_6.papertable": 20
+  },
+  "output_file": "683_papers_after_automated_deduplication.papertable",
+  "filters_applied": {
+    "year_range": "2019-2025",
+    "publication_types": [
+      "journal-article",
+      "conference_paper",
+      "report",
+      "preprint"
+    ]
+  }
+}

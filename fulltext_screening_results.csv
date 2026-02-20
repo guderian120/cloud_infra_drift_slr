@@ -1,0 +1,105 @@
+paper_number,decision,reason,relevance_score,matched_criteria
+1,EXCLUDE,Low relevance score: 2.0. Does not meet minimum threshold of 3.0,2.0,['TOOL: terraform']
+2,EXCLUDE,Low relevance score: 2.0. Does not meet minimum threshold of 3.0,2.0,['IaC: infrastructure automation']
+3,INCLUDE,"Relevance score: 5.0. Matched criteria: IaC: iac, CLOUD: cloud infrastructure, POLICY: opa",5.0,"['IaC: iac', 'CLOUD: cloud infrastructure', 'POLICY: opa']"
+4,EXCLUDE,Low relevance score: 2.0. Does not meet minimum threshold of 3.0,2.0,['IaC: iac']
+5,INCLUDE,"Relevance score: 4.0. Matched criteria: TOOL: terraform, IaC: infrastructure as code",4.0,"['TOOL: terraform', 'IaC: infrastructure as code']"
+6,INCLUDE,"Relevance score: 4.0. Matched criteria: TOOL: terraform, IaC: infrastructure as code",4.0,"['TOOL: terraform', 'IaC: infrastructure as code']"
+7,EXCLUDE,Low relevance score: 2.0. Does not meet minimum threshold of 3.0,2.0,['CLOUD: cloud infrastructure']
+9,EXCLUDE,Low relevance score: 2.0. Does not meet minimum threshold of 3.0,2.0,['IaC: iac']
+11,INCLUDE,"Relevance score: 4.0. Matched criteria: IaC: infrastructure as code, CLOUD: aws",4.0,"['IaC: infrastructure as code', 'CLOUD: aws']"
+12,EXCLUDE,Low relevance score: 0.0. Does not meet minimum threshold of 3.0,0.0,[]
+13,EXCLUDE,Low relevance score: 0.0. Does not meet minimum threshold of 3.0,0.0,[]
+14,EXCLUDE,Low relevance score: 2.0. Does not meet minimum threshold of 3.0,2.0,['CLOUD: cloud infrastructure']
+15,INCLUDE,"Relevance score: 4.0. Matched criteria: TOOL: ansible, CLOUD: azure",4.0,"['TOOL: ansible', 'CLOUD: azure']"
+17,INCLUDE,"Relevance score: 3.5. Matched criteria: CLOUD: cloud infrastructure, GITOPS: gitops",3.5,"['CLOUD: cloud infrastructure', 'GITOPS: gitops']"
+20,INCLUDE,"Relevance score: 6.0. Matched criteria: TOOL: terraform, IaC: iac, CLOUD: cloud infrastructure",6.0,"['TOOL: terraform', 'IaC: iac', 'CLOUD: cloud infrastructure']"
+22,INCLUDE,"Relevance score: 6.0. Matched criteria: TOOL: ansible, IaC: iac, CLOUD: cloud infrastructure",6.0,"['TOOL: ansible', 'IaC: iac', 'CLOUD: cloud infrastructure']"
+23,EXCLUDE,Low relevance score: 2.0. Does not meet minimum threshold of 3.0,2.0,['IaC: iac']
+24,EXCLUDE,Low relevance score: 0.0. Does not meet minimum threshold of 3.0,0.0,[]
+25,INCLUDE,"Relevance score: 6.0. Matched criteria: IaC: infrastructure as code, CLOUD: hybrid cloud, STATE: state management",6.0,"['IaC: infrastructure as code', 'CLOUD: hybrid cloud', 'STATE: state management']"
+26,EXCLUDE,Low relevance score: 2.0. Does not meet minimum threshold of 3.0,2.0,['IaC: infrastructure as code']
+27,INCLUDE,Relevance score: 3.0. Matched criteria: CORE: drift detection,3.0,['CORE: drift detection']
+29,EXCLUDE,Low relevance score: 0.0. Does not meet minimum threshold of 3.0,0.0,[]
+30,EXCLUDE,Low relevance score: 0.0. Does not meet minimum threshold of 3.0,0.0,[]
+31,INCLUDE,"Relevance score: 3.0. Matched criteria: CLOUD: aws, POLICY: governance",3.0,"['CLOUD: aws', 'POLICY: governance']"
+33,EXCLUDE,Low relevance score: 2.0. Does not meet minimum threshold of 3.0,2.0,['CLOUD: cloud infrastructure']
+36,EXCLUDE,Low relevance score: 2.0. Does not meet minimum threshold of 3.0,2.0,['IaC: iac']
+37,INCLUDE,"Relevance score: 3.0. Matched criteria: IaC: iac, POLICY: governance",3.0,"['IaC: iac', 'POLICY: governance']"
+38,INCLUDE,"Relevance score: 4.0. Matched criteria: TOOL: terraform, IaC: infrastructure as code",4.0,"['TOOL: terraform', 'IaC: infrastructure as code']"
+39,EXCLUDE,Low relevance score: 0.0. Does not meet minimum threshold of 3.0,0.0,[]
+40,EXCLUDE,Low relevance score: 2.0. Does not meet minimum threshold of 3.0,2.0,['IaC: infrastructure as code']
+41,INCLUDE,"Relevance score: 3.0. Matched criteria: IaC: infrastructure as code, POLICY: policy as code",3.0,"['IaC: infrastructure as code', 'POLICY: policy as code']"
+42,EXCLUDE,Low relevance score: 2.0. Does not meet minimum threshold of 3.0,2.0,['IaC: infrastructure as code']
+43,EXCLUDE,Low relevance score: 0.0. Does not meet minimum threshold of 3.0,0.0,[]
+44,EXCLUDE,Low relevance score: 2.0. Does not meet minimum threshold of 3.0,2.0,['IaC: iac']
+45,EXCLUDE,Low relevance score: 2.0. Does not meet minimum threshold of 3.0,2.0,['IaC: infrastructure as code']
+47,EXCLUDE,Low relevance score: 2.0. Does not meet minimum threshold of 3.0,2.0,['IaC: iac']
+48,EXCLUDE,Low relevance score: 2.0. Does not meet minimum threshold of 3.0,2.0,['IaC: infrastructure as code']
+49,EXCLUDE,Low relevance score: 2.0. Does not meet minimum threshold of 3.0,2.0,['REMEDIATION: self-healing']
+51,EXCLUDE,Low relevance score: 0.0. Does not meet minimum threshold of 3.0,0.0,[]
+52,INCLUDE,"Relevance score: 4.0. Matched criteria: TOOL: terraform, CLOUD: aws",4.0,"['TOOL: terraform', 'CLOUD: aws']"
+53,EXCLUDE,Low relevance score: 0.0. Does not meet minimum threshold of 3.0,0.0,[]
+56,EXCLUDE,Low relevance score: 2.0. Does not meet minimum threshold of 3.0,2.0,['CLOUD: multi-cloud']
+57,INCLUDE,"Relevance score: 6.0. Matched criteria: TOOL: terraform, IaC: iac, CLOUD: cloud infrastructure",6.0,"['TOOL: terraform', 'IaC: iac', 'CLOUD: cloud infrastructure']"
+59,EXCLUDE,Low relevance score: 2.0. Does not meet minimum threshold of 3.0,2.0,['IaC: iac']
+60,EXCLUDE,Low relevance score: 2.0. Does not meet minimum threshold of 3.0,2.0,['IaC: iac']
+61,EXCLUDE,Low relevance score: 2.0. Does not meet minimum threshold of 3.0,2.0,['IaC: infrastructure as code']
+65,INCLUDE,"Relevance score: 4.0. Matched criteria: TOOL: ansible, IaC: infrastructure as code",4.0,"['TOOL: ansible', 'IaC: infrastructure as code']"
+66,INCLUDE,"Relevance score: 6.0. Matched criteria: TOOL: ansible, IaC: iac, STATE: state reconciliation",6.0,"['TOOL: ansible', 'IaC: iac', 'STATE: state reconciliation']"
+68,EXCLUDE,Low relevance score: 2.0. Does not meet minimum threshold of 3.0,2.0,['TOOL: terraform']
+70,EXCLUDE,Low relevance score: 0.0. Does not meet minimum threshold of 3.0,0.0,[]
+72,EXCLUDE,Low relevance score: 2.0. Does not meet minimum threshold of 3.0,2.0,['IaC: iac']
+73,EXCLUDE,Low relevance score: 0.0. Does not meet minimum threshold of 3.0,0.0,[]
+74,EXCLUDE,Low relevance score: 2.0. Does not meet minimum threshold of 3.0,2.0,['CLOUD: cloud infrastructure']
+84,EXCLUDE,Low relevance score: 2.0. Does not meet minimum threshold of 3.0,2.0,['CLOUD: hybrid cloud']
+85,INCLUDE,"Relevance score: 4.0. Matched criteria: TOOL: terraform, IaC: iac",4.0,"['TOOL: terraform', 'IaC: iac']"
+86,EXCLUDE,Low relevance score: 2.0. Does not meet minimum threshold of 3.0,2.0,['IaC: iac']
+87,INCLUDE,"Relevance score: 4.0. Matched criteria: TOOL: ansible, IaC: iac",4.0,"['TOOL: ansible', 'IaC: iac']"
+88,INCLUDE,"Relevance score: 6.0. Matched criteria: TOOL: ansible, IaC: iac, CLOUD: aws",6.0,"['TOOL: ansible', 'IaC: iac', 'CLOUD: aws']"
+89,INCLUDE,"Relevance score: 4.0. Matched criteria: TOOL: ansible, IaC: infrastructure as code",4.0,"['TOOL: ansible', 'IaC: infrastructure as code']"
+90,INCLUDE,"Relevance score: 4.0. Matched criteria: TOOL: ansible, IaC: infrastructure as code",4.0,"['TOOL: ansible', 'IaC: infrastructure as code']"
+91,EXCLUDE,Low relevance score: 0.0. Does not meet minimum threshold of 3.0,0.0,[]
+92,EXCLUDE,Low relevance score: 2.0. Does not meet minimum threshold of 3.0,2.0,['IaC: infrastructure automation']
+93,EXCLUDE,Low relevance score: 2.0. Does not meet minimum threshold of 3.0,2.0,['CLOUD: multi-cloud']
+94,EXCLUDE,Low relevance score: 1.0. Does not meet minimum threshold of 3.0,1.0,['POLICY: governance']
+95,EXCLUDE,Low relevance score: 2.0. Does not meet minimum threshold of 3.0,2.0,['CLOUD: hybrid cloud']
+96,INCLUDE,"Relevance score: 4.0. Matched criteria: IaC: infrastructure as code, CLOUD: aws",4.0,"['IaC: infrastructure as code', 'CLOUD: aws']"
+97,EXCLUDE,Low relevance score: 2.0. Does not meet minimum threshold of 3.0,2.0,['CLOUD: cloud infrastructure']
+98,EXCLUDE,Low relevance score: 1.5. Does not meet minimum threshold of 3.0,1.5,['GITOPS: gitops']
+100,INCLUDE,Relevance score: 3.0. Matched criteria: CORE: drift detection,3.0,['CORE: drift detection']
+102,EXCLUDE,Low relevance score: 0.0. Does not meet minimum threshold of 3.0,0.0,[]
+103,EXCLUDE,Low relevance score: 0.0. Does not meet minimum threshold of 3.0,0.0,[]
+104,INCLUDE,Relevance score: 3.0. Matched criteria: CORE: drift monitoring,3.0,['CORE: drift monitoring']
+107,INCLUDE,Relevance score: 3.0. Matched criteria: CORE: drift detection,3.0,['CORE: drift detection']
+108,INCLUDE,Relevance score: 3.0. Matched criteria: CORE: drift detection,3.0,['CORE: drift detection']
+109,EXCLUDE,Low relevance score: 0.0. Does not meet minimum threshold of 3.0,0.0,[]
+113,INCLUDE,Relevance score: 3.0. Matched criteria: CORE: drift detection,3.0,['CORE: drift detection']
+114,INCLUDE,Relevance score: 3.0. Matched criteria: CORE: drift detection,3.0,['CORE: drift detection']
+116,EXCLUDE,Low relevance score: 0.0. Does not meet minimum threshold of 3.0,0.0,[]
+119,INCLUDE,Relevance score: 3.0. Matched criteria: CORE: drift management,3.0,['CORE: drift management']
+123,EXCLUDE,Low relevance score: 0.0. Does not meet minimum threshold of 3.0,0.0,[]
+124,EXCLUDE,Low relevance score: 0.0. Does not meet minimum threshold of 3.0,0.0,[]
+125,INCLUDE,Relevance score: 3.0. Matched criteria: CORE: drift detection,3.0,['CORE: drift detection']
+126,INCLUDE,Relevance score: 3.0. Matched criteria: CORE: drift detection,3.0,['CORE: drift detection']
+127,EXCLUDE,Low relevance score: 0.0. Does not meet minimum threshold of 3.0,0.0,[]
+128,EXCLUDE,Low relevance score: 0.0. Does not meet minimum threshold of 3.0,0.0,[]
+134,EXCLUDE,Low relevance score: 0.0. Does not meet minimum threshold of 3.0,0.0,[]
+136,INCLUDE,Relevance score: 3.0. Matched criteria: CORE: drift correction,3.0,['CORE: drift correction']
+137,INCLUDE,"Relevance score: 4.0. Matched criteria: TOOL: terraform, CLOUD: google cloud",4.0,"['TOOL: terraform', 'CLOUD: google cloud']"
+138,EXCLUDE,Low relevance score: 0.0. Does not meet minimum threshold of 3.0,0.0,[]
+139,EXCLUDE,Low relevance score: 0.0. Does not meet minimum threshold of 3.0,0.0,[]
+142,EXCLUDE,Low relevance score: 0.0. Does not meet minimum threshold of 3.0,0.0,[]
+143,EXCLUDE,Low relevance score: 0.0. Does not meet minimum threshold of 3.0,0.0,[]
+144,EXCLUDE,Low relevance score: 0.0. Does not meet minimum threshold of 3.0,0.0,[]
+145,INCLUDE,"Relevance score: 3.0. Matched criteria: REMEDIATION: automated remediation, POLICY: compliance automation",3.0,"['REMEDIATION: automated remediation', 'POLICY: compliance automation']"
+146,EXCLUDE,Low relevance score: 0.0. Does not meet minimum threshold of 3.0,0.0,[]
+147,INCLUDE,Relevance score: 3.0. Matched criteria: CORE: drift detection,3.0,['CORE: drift detection']
+148,INCLUDE,Relevance score: 3.0. Matched criteria: CORE: drift detection,3.0,['CORE: drift detection']
+150,INCLUDE,Relevance score: 3.0. Matched criteria: CORE: drift detection,3.0,['CORE: drift detection']
+151,EXCLUDE,Low relevance score: 0.0. Does not meet minimum threshold of 3.0,0.0,[]
+152,INCLUDE,Relevance score: 3.0. Matched criteria: CORE: drift detection,3.0,['CORE: drift detection']
+153,INCLUDE,Relevance score: 3.0. Matched criteria: CORE: drift detection,3.0,['CORE: drift detection']
+154,INCLUDE,Relevance score: 3.0. Matched criteria: CORE: drift detection,3.0,['CORE: drift detection']
+155,INCLUDE,Relevance score: 3.0. Matched criteria: CORE: drift detection,3.0,['CORE: drift detection']
+156,INCLUDE,Relevance score: 3.0. Matched criteria: CORE: drift detection,3.0,['CORE: drift detection']
